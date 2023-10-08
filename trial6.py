@@ -1,15 +1,17 @@
+# Import required libraries
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, auth
-import subprocess
 
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
-firebase_admin.initialize_app(cred)
+# For Streamlit Cloud, initialize Firebase only if not already initialized
+if not firebase_admin._apps:
+    cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
+    firebase_admin.initialize_app(cred)
 
 def app():
-    st.title(':lock: User Authentication Service')
-
+    st.title(':red[:lock: User Authentication Service]')
+    st.image('https://logos-world.net/wp-content/uploads/2021/10/State-Farm-Symbol.png', width=80)
     choice = st.selectbox('Login/Signup', ['Login', 'Sign Up'])
     
     if choice == 'Login':
@@ -20,8 +22,8 @@ def app():
             try:
                 user = auth.get_user_by_email(email)
                 st.success("Login Successful!")
-                # Redirect to the dashboard app
-                subprocess.Popen(["streamlit", "run", "test3.py"])  
+                # Redirect to the dashboard app (modify with your dashboard app URL)
+                st.markdown("[Dashboard App](https://your-streamlit-dashboard-app-url.com)")
             except auth.UserNotFoundError:
                 st.warning('Login Failed: User not found.')
             except auth.AuthError:
