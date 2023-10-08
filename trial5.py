@@ -16,7 +16,6 @@ firebase_admin.initialize_app(cred)
 
 def app():
     st.title(':lock: User Authentication Service')
-
     choice = st.selectbox('Login/Signup', ['Login', 'Sign Up'])
     
     if choice == 'Login':
