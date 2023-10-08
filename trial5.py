@@ -16,7 +16,7 @@ cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
 
 def app():
     st.title(':lock: User Authentication Service')
-    
+
     choice = st.selectbox('Login/Signup', ['Login', 'Sign Up'])
     
     if choice == 'Login':
@@ -48,7 +48,6 @@ def app():
                 st.balloons()
             except auth.EmailAlreadyExistsError:
                 st.warning('Account creation failed: Email already exists.')
-    
 
 if __name__ == "__main__":
     app()
