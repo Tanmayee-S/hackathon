@@ -16,9 +16,9 @@ def app():
                 st.success("Login Successful!")
                 # Redirect to the dashboard app
                 subprocess.Popen(["streamlit", "run", "test3.py"])
-            except auth.UserNotFoundError:
+           except auth.UserNotFoundError:
                 st.warning('Login Failed: User not found.')
-            except auth.AuthError:
+           except auth.AuthError:
                 st.warning('Login Failed: Incorrect password.')
             
             st.success("Login Successful!")
