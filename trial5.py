@@ -12,7 +12,7 @@ import subprocess
 
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
-firebase_admin.initialize_app(cred)
+# firebase_admin.initialize_app(cred)
 
 def app():
     st.title(':lock: User Authentication Service')
