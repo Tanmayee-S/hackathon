@@ -20,10 +20,10 @@ def app():
                 st.warning('Login Failed: User not found.')
            except auth.AuthError:
                 st.warning('Login Failed: Incorrect password.')
-            
-            st.success("Login Successful!")
-            # Open the dashboard app in a new tab using subprocess
-            subprocess.Popen(["streamlit", "run", "test3.py"])
+        
+                st.success("Login Successful!")
+                # Open the dashboard app in a new tab using subprocess
+                subprocess.Popen(["streamlit", "run", "test3.py"])
         
     else:
         email = st.text_input('Email Address')
