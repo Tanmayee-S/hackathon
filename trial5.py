@@ -6,13 +6,13 @@ Created on Sat Oct  7 22:49:54 2023
 """
 
 import streamlit as st
-# import firebase_admin
+import firebase_admin
 from firebase_admin import credentials, auth
 import subprocess
 
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
-# firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(cred)
 
 def app():
     st.title(':lock: User Authentication Service')
