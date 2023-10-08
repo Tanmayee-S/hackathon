@@ -6,7 +6,7 @@ Created on Sat Oct  7 22:49:54 2023
 """
 
 import streamlit as st
-import firebase_admin
+# import firebase_admin
 from firebase_admin import credentials, auth
 import subprocess
 
