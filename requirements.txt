@@ -1,0 +1,11 @@
+streamlit
+pandas
+requests
+datetime
+scikit-learn
+subprocess
+LinearRegression
+pygwalker
+firebase_admin
+credentials
+auth
