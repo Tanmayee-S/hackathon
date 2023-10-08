@@ -1,5 +1,11 @@
 import streamlit as st
+import firebase_admin
+from firebase_admin import credentials, auth
 import subprocess
+
+# Initialize Firebase Admin SDK
+cred = credentials.Certificate('hackuta2023-a3ddb-0209903e3290.json')
+firebase_admin.initialize_app(cred)
 
 def app():
     st.title(':lock: User Authentication Service')
@@ -11,14 +17,14 @@ def app():
         password = st.text_input('Password', type='password')
         
         if st.button('Login'):
-           try:
+            try:
                 user = auth.get_user_by_email(email)
                 st.success("Login Successful!")
                 # Redirect to the dashboard app
-                subprocess.Popen(["streamlit", "run", "test3.py"])
-           except auth.UserNotFoundError:
+                subprocess.Popen(["streamlit", "run", "test3.py"])  
+            except auth.UserNotFoundError:
                 st.warning('Login Failed: User not found.')
-           except auth.AuthError:
+            except auth.AuthError:
                 st.warning('Login Failed: Incorrect password.')
         
     else:
